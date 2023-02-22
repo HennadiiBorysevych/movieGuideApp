@@ -9,11 +9,12 @@
 let movieNameRef = document.getElementById('movie-name');
 let searchBtn = document.getElementById('search-btn');
 let result = document.getElementById('result');
+
 let getMovie = () => {
   let movieName = movieNameRef.value;
-  const key = 'a23c34f';
+  const key = '';
 
-  let url = `http://www.omdbapi.com/?t=${movieName}&apikey=${key}?VERIFYKEY=4352ff90-31c5-428d-817b-03d3a7d670a3`;
+  let url = `http://www.omdbapi.com/?apikey=a23c34f&t=${movieName}`;
 
   if (movieName.length <= 0) {
     result.innerHTML = `<h3 class='msg'>Please enter a movie name</h3>`;
@@ -21,13 +22,14 @@ let getMovie = () => {
     fetch(url)
       .then(res => res.json())
       .then(data => {
+        console.log(data);
         if (data.Response == 'True') {
           result.innerHTML = `<div class='info'>
           <img src=${data.Poster} class="poster"
           <div>
           <h2>${data.title}</h2>
           <div class="rating">
-          <img src="star-icon.svg">
+          <img src="/images/star-icon">
           <h4>${data.imdbRating}</h4>
           <div class="details">
           <span>${data.Rated}</span>
