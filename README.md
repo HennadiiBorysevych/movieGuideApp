@@ -23,4 +23,4 @@ To create a production build of the application, run npm run build. This will cr
 Credits:
 The MovieGuide App uses the following APIs:
 
-The Movie Database (https://www.themoviedb.org/)
+The Movie Database ('https://www.omdbapi.com')
